@@ -1,4 +1,4 @@
-@cydeoLogin
+@cydeoLogin @regression
 Feature: Cydeo Login Functionality
   Agile Story: As a user I should be able to login with valid credentials
 
