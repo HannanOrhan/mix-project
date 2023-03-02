@@ -7,7 +7,6 @@ Feature: Library login feature
   Background: For all scenarios user is on the login page of the Library application
       Given user is on the login page of the application
 
-  @regression
   Scenario: Login as Librarian
     When user enters librarian user name
     And user enters librarian password

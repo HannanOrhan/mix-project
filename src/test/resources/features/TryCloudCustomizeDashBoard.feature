@@ -1,4 +1,4 @@
-@tryCloud @regression
+@tryCloud
 Feature: TryCloud application customizing the dashboard
   Agile story: As a user, I should be able to customize the Dashboard.
 
