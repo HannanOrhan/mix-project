@@ -1,4 +1,4 @@
-@bing
+@bing @smoke
 Feature: Bing search functionality
   Agile story: As a user, when I am on the Bing search page
   I should be able to search and see relevant results
