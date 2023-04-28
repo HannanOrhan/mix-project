@@ -1,4 +1,4 @@
-package com.cydeo.utilities;
+package com.comp.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
@@ -13,10 +13,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.net.URL;
-import java.time.Duration;
 
 public class Driver {
     static String browser;
@@ -60,8 +58,12 @@ public class Driver {
                     }
                     break;
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    driverPool.set(new ChromeDriver(options));
+//                    driverPool.get().manage().window().maximize();
+//                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//                  driverPool.get().manage().deleteAllCookies();
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
@@ -104,6 +106,7 @@ public class Driver {
                     break;
             }
             driverPool.get().manage().window().setSize(new Dimension(1280, 920));
+            driverPool.get().manage().deleteAllCookies();
         }
 
         return driverPool.get();
